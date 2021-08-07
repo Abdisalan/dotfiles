@@ -1,6 +1,8 @@
 # ZSH
-export ZSH="/Users/Abdi/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="spaceship"
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 

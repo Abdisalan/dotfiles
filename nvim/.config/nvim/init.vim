@@ -37,7 +37,7 @@ set updatetime=50
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-set colorcolumn=100
+set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
@@ -50,8 +50,6 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'wakatime/vim-wakatime'
-Plug 'preservim/nerdtree'
 
 "  I AM SO SORRY FOR DOING COLOR SCHEMES IN MY VIMRC, BUT I HAVE
 "  TOOOOOOOOOOOOO
@@ -59,6 +57,7 @@ Plug 'morhetz/gruvbox'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
+Plug '/home/mpaulson/personal/vim-be-good'
 
 call plug#end()
 
@@ -151,7 +150,6 @@ nmap <leader>gs :G<CR>
 " vim-go
 let g:go_fmt_command = "goimports"
 nmap <leader>gt :GoTest<CR>
-nmap <C-m> :GoDoc<CR>
 
 " quick edit vimrc
 nnoremap <leader>ev :wincmd v<bar> :e ~/.config/nvim/init.vim<CR>
@@ -162,7 +160,7 @@ nnoremap <leader>fs :w<CR>
 nnoremap <leader>fq :q<CR>
 " prefix window stuff
 nnoremap <leader>wh :split<CR>
-nnoremap <leader>wv :vsplit <bar> :wincmd l<CR>
+nnoremap <leader>wv :vsplit<CR>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -174,31 +172,12 @@ autocmd BufWritePre * :call TrimWhitespace()
 
 autocmd BufWritePost *.go :GoVet
 
-" go tags
-let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
+" Python
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
