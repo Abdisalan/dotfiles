@@ -66,6 +66,7 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+Ctrl+e exec rofi -show emoji -modi emoji
 bindsym $mod+Tab exec rofi -show
 bindsym $mod+Shift+t exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+Shift+Ctrl+s exec maim ~/Pictures/$(date +%s).png
 
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
