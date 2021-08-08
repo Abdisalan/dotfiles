@@ -6,8 +6,11 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# abdi's settings
+# Needed to stow dotfiles
 export DOTFILES=$HOME/dotfiles
+
+# Restore pywal settings in new terminal
+(cat ~/.cache/wal/sequences &)
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"

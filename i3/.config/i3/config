@@ -194,6 +194,7 @@ assign [class="firefox"] $ws2
 assign [class="discord"] $ws3
 
 # Open specific applications in floating mode
+for_window [title="pcmanfm"] floating enable border pixel 1
 for_window [title="Discord"] floating enable border pixel 1
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
