@@ -6,6 +6,9 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# abdi's settings
+export DOTFILES=$HOME/dotfiles
+
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
