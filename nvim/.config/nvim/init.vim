@@ -6,7 +6,6 @@
 
 syntax on
 
-set guicursor=
 set noshowmatch
 set relativenumber
 set nohlsearch
@@ -26,9 +25,6 @@ set undofile
 set incsearch
 set termguicolors
 set scrolloff=8
-
-" Give more space for displaying messages.
-set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -50,31 +46,11 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-"  I AM SO SORRY FOR DOING COLOR SCHEMES IN MY VIMRC, BUT I HAVE
-"  TOOOOOOOOOOOOO
 Plug 'morhetz/gruvbox'
-Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
-Plug 'flazz/vim-colorschemes'
-Plug '/home/mpaulson/personal/vim-be-good'
 
 call plug#end()
 
-" --- vim go (polyglot) settings.
-" let g:go_highlight_build_constraints = 1
-" let g:go_highlight_extra_types = 1
-" let g:go_highlight_fields = 1
-" let g:go_highlight_functions = 1
-" let g:go_highlight_methods = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_structs = 1
-" let g:go_highlight_types = 1
-" let g:go_highlight_function_parameters = 1
-" let g:go_highlight_function_calls = 1
-" let g:go_highlight_generate_tags = 1
-" let g:go_highlight_format_strings = 1
-" let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
 
 " disable mapping by vim-go
@@ -169,7 +145,6 @@ fun! TrimWhitespace()
 endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
-
 autocmd BufWritePost *.go :GoVet
 
 " Python
